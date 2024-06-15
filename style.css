@@ -1,413 +1,349 @@
+/* Global Styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Courier New", Courier, monospace;
 }
 
 body {
-  scroll-behavior: smooth;
+  font-family: "Arial", sans-serif;
+  line-height: 1.6;
+  background-color: #f5f5f5;
+  color: #333;
 }
 
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* Header Styles */
 header {
+  background: #333;
+  color: #fff;
+  padding: 10px 0;
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
-  height: 70px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background-color: white;
   z-index: 10;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-ul {
+header .container {
   display: flex;
-  list-style-type: none;
+  justify-content: space-between;
+  align-items: center;
 }
 
-ul li a {
-  padding: 0 20px;
+header h1 {
+  font-size: 24px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav ul li {
+  margin-left: 20px;
+}
+
+nav ul li a {
+  color: #fff;
   text-decoration: none;
-  color: #3a3a3a;
-  display: inline-block;
+  font-size: 18px;
+  transition: color 0.3s;
 }
 
-li a::after {
-  content: "";
-  display: block;
-  height: 4px;
-  width: 0;
-  background-color: tomato;
-  transition: width 0.5s;
+nav ul li a:hover {
+  color: tomato;
 }
 
-li a:hover::after {
-  width: 100%;
-}
-
-/* Hamburger menu */
-.nav-toggle {
+.hamburger {
   display: none;
-}
-
-.nav-toggle-label {
   font-size: 30px;
   cursor: pointer;
-  display: none;
 }
 
 @media (max-width: 768px) {
-  .nav-toggle-label {
-    display: block;
-  }
-
-  .nav-toggle:checked + header nav {
-    display: block;
-    position: absolute;
-    top: 70px;
-    right: 0;
-    width: 100%;
-    background-color: white;
-    border-top: 1px solid #ccc;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  ul {
+  nav ul {
     display: none;
     flex-direction: column;
-    position: absolute;
-    top: 70px;
-    right: 0;
     width: 100%;
-    background-color: white;
-    border-top: 1px solid #ccc;
+    background: #333;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    padding: 20px 0;
   }
 
-  ul li {
-    text-align: center;
-    padding: 15px 0;
-  }
-
-  .nav-toggle:checked + header nav ul {
+  nav ul.active {
     display: flex;
   }
+
+  .hamburger {
+    display: block;
+    color: #fff;
+  }
 }
 
+/* Main Content Styles */
 main {
-  padding-top: 100px;
+  margin-top: 60px;
+  padding: 20px 0;
+  background-color: #fff;
+}
+
+.content {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   align-items: center;
-}
-
-.logo {
-  max-width: 350px;
-  height: auto;
-  border-radius: 90%;
-}
-
-.content-left,
-.content-right {
-  flex: 1 1 50%;
-  max-width: 40%;
+  text-align: justify;
+  margin-bottom: 20px;
   padding: 20px;
-  box-sizing: border-box;
 }
 
-main h1 {
-  font-size: 55px;
-  color: #1a2130;
+.content-left {
+  flex: 1;
+  padding: 20px;
 }
 
-main h2 {
-  font-size: 25px;
-  color: #1a2130;
-  margin: 30px 0;
+.content-left h1 {
+  font-size: 36px;
+  color: #333;
 }
 
-main p {
-  font-size: 15px;
-  font-weight: bold;
-  color: #1a2130;
-  margin: 15px 0;
+.content-left h2 {
+  font-size: 24px;
+  color: #555;
+}
+
+.content-left p {
+  margin: 20px 0;
+  font-size: 16px;
 }
 
 .cta {
-  margin: 50px 0;
-  padding: 15px 30px;
-  color: #3a3a3a;
-  outline: none;
+  display: inline-block;
+  padding: 10px 20px;
+  background: tomato;
+  color: #fff;
   border: none;
-  font-size: large;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(14, 13, 13, 0.938);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
 }
 
-.cta::after {
-  content: "";
-  display: block;
-  height: 4px;
-  width: 0;
-  background-color: tomato;
-  transition: width 0.5s;
+.cta:hover {
+  background: #e63946;
 }
 
-.cta:hover::after {
-  width: 100%;
+.content-right {
+  flex: 1;
+  text-align: center;
 }
 
+.logo {
+  max-width: 100%;
+  border-radius: 50%;
+}
+
+/* Skills Section */
 .skill-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  height: calc(100vh - 100px);
-  background-color: #3a3a3a;
-  border-radius: 20px 20px 0 0;
+  background: #f4f4f4;
+  padding: 50px 20px;
 }
 
-.skill-right {
-  display: flex;
-
-  justify-content: space-around;
-  align-items: center;
-  height: calc(100vh - 100px);
-  background-color: #3a3a3a;
-  padding: 30px 0;
-}
-
-.skill-right img {
-  width: 250px;
-  height: 100px;
-  margin: 10px;
-  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.938);
+.skill-container .container {
+  text-align: center;
 }
 
 .skill-container h1 {
-  text-align: center;
-  font-size: 55px;
-  color: #fff;
-  margin: 30px 0;
+  font-size: 36px;
+  margin-bottom: 20px;
 }
 
 .skill-container h2 {
+  font-size: 18px;
+  margin-bottom: 40px;
+}
+
+.skills {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.skills img {
+  width: 150px;
+  margin: 10px;
+}
+
+/* Projects Section */
+.projects-container {
+  background: #fff;
+  padding: 50px 20px;
+}
+
+.projects-container .container {
   text-align: center;
+}
+
+.project {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.project img {
+  flex: 1;
+  max-width: 100%;
+}
+
+.project-description {
+  flex: 1;
+  padding: 20px;
+}
+
+.project-description h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.project-description h3 {
   font-size: 20px;
-  color: #fff;
+  margin-bottom: 10px;
 }
 
-.java-container {
-  display: flex;
-  height: calc(100vh - 100px);
-  justify-content: space-around;
-  align-items: center;
-  background-color: #3a3a3a;
-  padding-top: 600px;
+.project-description p {
+  font-size: 16px;
 }
 
-.java-container img {
-  width: 500px;
-  height: 350px;
-  margin: 10px;
-  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.938);
-}
-
-.java-container h1 {
-  font-size: 55px;
-  color: #fff;
-  margin: 30px 0;
-}
-
-.java-container h2 {
-  font-size: 25px;
-  color: #fff;
-  margin: 30px 0;
-}
-
-.java-container h3 {
-  font-size: 15px;
-  color: #fff;
-}
-
-.web-container {
-  display: flex;
-  height: calc(100vh - 100px);
-  justify-content: space-around;
-  align-items: center;
-  background-color: #3a3a3a;
-  padding-top: 600px;
-}
-
-.web-container img {
-  width: 500px;
-  height: 350px;
-  margin: 10px;
-  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.938);
-}
-
-.web-container h1 {
-  font-size: 55px;
-  color: #fff;
-  margin: 30px 0;
-}
-
-.web-container h2 {
-  font-size: 25px;
-  color: #fff;
-  margin: 30px 0;
-}
-
-.web-container h3 {
-  font-size: 15px;
-  color: #fff;
-}
-
-.port-container {
-  display: flex;
-  height: calc(100vh - 100px);
-  justify-content: space-around;
-  align-items: center;
-  background-color: #3a3a3a;
-  padding-top: 600px;
-}
-
-.port-container img {
-  width: 500px;
-  height: 350px;
-  margin: 10px;
-  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.938);
-}
-
-.port-container h1 {
-  font-size: 55px;
-  color: #fff;
-  margin: 30px 0;
-}
-
-.port-container h2 {
-  font-size: 25px;
-  color: #fff;
-  margin: 30px 0;
-}
-
+/* Achievements Section */
 .achievements-container {
-  display: flex;
-  flex-direction: column;
-  height: calc(100vh - 100px);
-  justify-content: space-around;
-  align-items: center;
-  background-color: #3a3a3a;
-  border-radius: 0 0 20px 20px;
-  padding-top: 600px;
+  background: #f4f4f4;
+  padding: 50px 20px;
 }
 
-.achievements-container img {
-  width: 500px;
-  height: 350px;
-  margin: 10px;
-  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.938);
+.achievements-container .container {
+  text-align: center;
 }
 
 .achievements-container h1 {
-  font-size: 55px;
-  color: black;
-  padding: 30px 0;
+  font-size: 36px;
+  margin-bottom: 20px;
 }
 
+.achievements {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.achievements img {
+  width: 200px;
+  margin: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer Styles */
+footer {
+  background: #333;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+  margin-top: 50px;
+}
+
+footer .container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+footer h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+footer h2 {
+  font-size: 18px;
+}
+
+footer img {
+  width: 30px;
+  height: auto;
+  margin: 0 10px;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: tomato;
+}
+
+/* Back Button Styles */
+.back {
+  display: inline-block;
+  margin: 20px;
+  padding: 10px 20px;
+  background: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.back:hover {
+  background: tomato;
+}
+
+/* Resume Page Styles */
 .resume {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 70px 0;
+  min-height: 100vh;
+  background: #f4f4f4;
 }
+
 .resume img {
-  width: 50%;
-}
-
-.back {
-  position: fixed;
-  top: 5px;
-  left: 600px;
-  padding: 10px 15px;
-  color: #3a3a3a;
-  outline: none;
-  border: none;
-  font-size: large;
+  max-width: 90%;
+  border: 2px solid #ddd;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(14, 13, 13, 0.938);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.back::after {
-  content: "";
-  display: block;
-  height: 4px;
-  width: 0;
-  background-color: tomato;
-  transition: width 0.5s;
-}
-
-.back:hover::after {
-  width: 100%;
-}
-
-/* Responsive styles */
 @media (max-width: 768px) {
   .content-left,
   .content-right {
-    flex: 1 1 100%;
-    max-width: 100%;
+    flex: 100%;
+    text-align: center;
   }
 
-  .java-container img,
-  .web-container img,
-  .port-container img,
-  .achievements-container img {
-    width: 90%;
-    height: auto;
-  }
-
-  header {
-    flex-direction: column;
-    height: auto;
-  }
-
-  ul {
+  .skills {
+    align-items: center;
     flex-direction: column;
   }
 
-  ul li a {
-    padding: 10px;
+  .project {
+    flex-direction: column;
   }
 
-  .skill-right {
-    flex-wrap: wrap;
-  }
-}
-
-@media (max-width: 480px) {
-  main h1,
-  .skill-container h1,
-  .java-container h1,
-  .web-container h1,
-  .port-container h1,
-  .achievements-container h1 {
-    font-size: 40px;
+  .achievements {
+    align-items: center;
+    flex-direction: column;
   }
 
-  main h2,
-  .java-container h2,
-  .web-container h2,
-  .port-container h2 {
-    font-size: 20px;
-  }
-
-  .java-container,
-  .web-container,
-  .port-container,
-  .achievements-container {
-    padding: 50px 0;
+  footer .container {
+    flex-direction: column;
   }
 }
