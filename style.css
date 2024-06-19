@@ -369,14 +369,16 @@ footer h3 {
   animation: fadeIn 1.5s ease 0.5s;
 }
 
-footer a {
+footer {
   color: #fff;
   text-decoration: none;
   transition: color 0.3s;
+  transition: 1s;
 }
 
 footer a:hover {
-  color: tomato; /* Hover color */
+  transform: scale(1.2);
+  z-index: 2;
 }
 
 /* Back Button Styles */
