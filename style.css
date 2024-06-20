@@ -195,6 +195,7 @@ main {
 
 .skills {
   display: flex;
+  flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
 }
@@ -515,7 +516,6 @@ footer a:hover {
 
   .skills {
     align-items: center;
-    flex-direction: column;
   }
 
   .project {
