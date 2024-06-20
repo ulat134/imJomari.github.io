@@ -415,10 +415,16 @@ footer a:hover {
 }
 
 .resume img {
-  max-width: 90%;
+  max-width: 70%;
   border: 2px solid #ddd;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: 1s;
+}
+
+.resume img:hover {
+  transform: scale(1.5);
+  z-index: 2;
 }
 
 /* Animations */
