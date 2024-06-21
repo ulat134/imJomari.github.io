@@ -380,7 +380,7 @@ footer a:hover {
 }
 
 .resume img {
-  width: 600px;
+  width: 100%;
   border: 2px solid #ddd;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -487,8 +487,7 @@ footer a:hover {
   }
 
   .achievements {
-    align-items: center;
-    flex-direction: column;
+    flex-direction: row;
   }
 
   footer .container {
@@ -504,5 +503,9 @@ footer a:hover {
 
   footer .social-links a img {
     width: 30px;
+  }
+
+  resume {
+    flex-direction: column;
   }
 }
