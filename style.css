@@ -89,7 +89,7 @@ nav ul li a:hover {
 
   .hamburger {
     display: block;
-    color: #fff;
+    color: #6d6a6a;
   }
 }
 
@@ -97,7 +97,7 @@ nav ul li a:hover {
 main {
   margin-top: 60px;
   padding: 20px 0;
-  background-color: #fff;
+  background-color: #e0d3d3;
 }
 
 .content {
@@ -380,7 +380,7 @@ footer a:hover {
 }
 
 .resume img {
-  width: 100%;
+  width: 60%;
   border: 2px solid #ddd;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
