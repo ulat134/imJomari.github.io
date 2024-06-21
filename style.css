@@ -271,7 +271,7 @@ main {
 }
 
 .achievements img {
-  width: 200px;
+  width: 350px;
   margin: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 1.5);
   animation: zoomIn 1s ease;
@@ -380,8 +380,7 @@ footer a:hover {
 }
 
 .resume img {
-  width: auto;
-
+  width: 750px;
   border: 2px solid #ddd;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -389,7 +388,7 @@ footer a:hover {
 }
 
 .resume img:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
   z-index: 2;
 }
 
@@ -488,7 +487,8 @@ footer a:hover {
   }
 
   .achievements {
-    flex-direction: row;
+    align-items: center;
+    flex-direction: column;
   }
 
   footer .container {
