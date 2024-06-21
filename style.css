@@ -380,7 +380,8 @@ footer a:hover {
 }
 
 .resume img {
-  width: 750px;
+  width: auto;
+
   border: 2px solid #ddd;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -388,7 +389,7 @@ footer a:hover {
 }
 
 .resume img:hover {
-  transform: scale(1.1);
+  transform: scale(1.2);
   z-index: 2;
 }
 
